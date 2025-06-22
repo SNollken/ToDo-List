@@ -1,3 +1,20 @@
+#-------------------------------------------------------------------
+# ARQUIVO .GITIGNORE
+#-------------------------------------------------------------------
 
+# Ignora a pasta de dependências do Node (node_modules/)
+#
+# MOTIVO 1: a pasta eh GIGANTE. pode ter milhares de arquivos e deixar seu projeto muito pesado e lento para baixar.
+# MOTIVO 2: ela eh GERADA AUTOMATICAMENTE. qualquer pessoa que baixar seu projeto pode recriar essa pasta de forma identica
+#apenas rodando o comando 'npm install' no terminal. o 'mapa' para criar a pasta ja esta nos arquivos
+#package.json e package-lock.json, que SAO enviados para o github.
 node_modules/
+
+
+# Ignora o arquivo de variáveis de ambiente (.env)
+#
+# MOTIVO: SEGURANCA! este eh o motivo mais importante.
+#o arquivo .env contem informacoes sensiveis, como a senha do seu banco de dados.
+# voce NUNCA, em hipotese alguma, deve enviar segredos e senhas para um repositorio publico (ou ate mesmo privado).
+#se voce enviasse esse arquivo, qualquer pessoa com acesso ao seu github poderia ver sua senha e acessar seu banco de dados.
 .env
