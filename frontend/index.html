@@ -1,26 +1,79 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Lista de Tarefas</title>
-  <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lista de Tarefas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <div class="container">
+        <div class="card">
+            <header class="header">
+                <h1 class="header-title">Lista de Tarefas</h1>
+                <p class="header-subtitle">Organize suas atividades diárias</p>
+            </header>
 
-  <div class="container">
-    <h1>Minha Lista de Tarefas</h1>
-    
-    <form id="task-form">
-      <input type="text" id="task-input" placeholder="O que precisa ser feito?" required>
-      <input type="datetime-local" id="prazo-input" title="Prazo para a tarefa (opcional)">
-      <button type="submit">Adicionar Tarefa</button>
-    </form>
-    
-    <ul id="task-list">
-      </ul>
-  </div>
+            <form id="task-form" class="form-container">
+                <div class="form-group">
+                    <label for="task-input" class="label">Nova Tarefa</label>
+                    <input
+                        type="text"
+                        id="task-input"
+                        placeholder="Digite sua tarefa aqui..."
+                        class="form-control"
+                    />
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="date-input" class="label">
+                            <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+                                <line x1="16" y1="2" x2="16" y2="6"></line>
+                                <line x1="8" y1="2" x2="8" y2="6"></line>
+                                <line x1="3" y1="10" x2="21" y2="10"></line>
+                            </svg>
+                            Data
+                        </label>
+                        <input type="date" id="date-input" class="form-control" />
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="time-input" class="label">
+                             <svg class="label-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <circle cx="12" cy="12" r="10"></circle>
+                                <polyline points="12 6 12 12 16 14"></polyline>
+                            </svg>
+                            Hora
+                        </label>
+                        <input type="time" id="time-input" class="form-control" />
+                    </div>
+                </div>
+                
+                <p id="error-message" class="error-message"></p>
+                
+                <button type="submit" class="button">
+                    <svg class="button-icon" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <line x1="12" y1="5" x2="12" y2="19"></line>
+                        <line x1="5" y1="12" x2="19" y2="12"></line>
+                    </svg>
+                    Adicionar Tarefa
+                </button>
+            </form>
+            
+            <div class="tasks-container">
+                <h2 class="tasks-heading">Suas Tarefas</h2>
+                <ul id="task-list" class="task-list">
+                    </ul>
+                <div id="empty-state" class="empty-state" style="display: none;">
+                    <p>Nenhuma tarefa adicionada ainda.</p>
+                    <p class="empty-state-subtext">Adicione sua primeira tarefa usando o formulário acima.</p>
+                </div>
+            </div>
+        </div>
+    </div>
 
-  <script src="script.js"></script>
+    <script src="script.js"></script>
 </body>
 </html>
