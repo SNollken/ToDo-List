@@ -1,0 +1,13 @@
+# ------------------------------------------------------------------
+# ARQUIVO DE VARIAVEIS DE AMBIENTE (.env)
+# Este arquivo normalmente NUNCA deve ser enviado para o GitHub.
+# Ele contem os segredos e configuracoes especificas da maquina/ambiente
+# onde o codigo esta rodando.
+# ------------------------------------------------------------------
+
+
+DB_HOST=hopper.proxy.rlwy.net
+DB_USER=root
+DB_PASSWORD=eokSMQLHYFYPKaSgByDaTuBQBMzuxjAg
+DB_DATABASE=railway
+DB_PORT=29138
