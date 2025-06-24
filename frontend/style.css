@@ -21,8 +21,8 @@ body {
 }
 
 .card {
-    max-width: 600px;
-    width: 100%;
+    width: 90%; /* Ocupa 90% da largura da tela */
+    max-width: 850px;
     background-color: white;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -109,11 +109,21 @@ body {
 .tasks-container {
     padding: 1.5rem;
 }
+.tasks-header {
+    display: flex;                 /* Ativa o Flexbox */
+    justify-content: space-between; /* Joga um item para cada ponta (esquerda e direita) */
+    align-items: center;           /* Alinha os itens verticalmente no centro */
+    margin-bottom: 1rem;           /* Cria um espaço antes da lista de tarefas começar */
+}
 .tasks-heading {
     font-size: 1.125rem;
     font-weight: 600;
     color: #1f2937;
-    margin-bottom: 1rem;
+    margin-bottom: 0;
+}
+#search-input {
+    width: 40%;
+    max-width: 250px;
 }
 .empty-state {
     text-align: center;
@@ -176,6 +186,10 @@ body {
 .task-meta-item {
     display: flex;
     align-items: center;
+}
+/* NOVO: Estilo para prazos vencidos */
+.task-meta.overdue .task-meta-item {
+    color: #ef4444; /* Um tom de vermelho forte */
 }
 .task-meta-icon {
     width: 0.75rem;

@@ -137,6 +137,29 @@ app.put('/api/tarefas/:id/concluir', async (req, res) => {
   }
 });
 
+// ----- [U]pdate - Desmarcar tarefa como concluida -----
+app.put('/api/tarefas/:id/desmarcar', async (req, res) => {
+    try {
+        const { id } = req.params;
+
+        const atualizadas = await knex('tarefas')
+            .where({ idTarefa: id })
+            .update({
+                timestampRealizacao: null
+            });
+
+        if (atualizadas === 0) {
+            return res.status(404).json({ message: 'Tarefa não encontrada.' });
+        }
+
+        res.status(200).json({ message: `Tarefa '${id}' marcada como não concluída.` });
+
+    } catch (error) {
+        res.status(500).json({ message: 'Erro ao desmarcar tarefa', error: error.message });
+    }
+});
+
+
 //----- [D]elete - Excluir uma tarefa (logicamente) -----
 //este endpoint responde a requisicoes do tipo DELETE. semanticamente, eh para apagar um recurso.
 app.delete('/api/tarefas/:id', async (req, res) => {

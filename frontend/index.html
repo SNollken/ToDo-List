@@ -62,17 +62,24 @@
                 </button>
             </form>
             
-            <div class="tasks-container">
-                <h2 class="tasks-heading">Suas Tarefas</h2>
-                <ul id="task-list" class="task-list">
-                    </ul>
-                <div id="empty-state" class="empty-state" style="display: none;">
-                    <p>Nenhuma tarefa adicionada ainda.</p>
-                    <p class="empty-state-subtext">Adicione sua primeira tarefa usando o formulário acima.</p>
-                </div>
-            </div>
+        <div class="tasks-container">
+        <div class="tasks-header">
+            <h2 class="tasks-heading">Suas Tarefas</h2>
+            <input 
+                type="search" 
+                id="search-input" 
+                placeholder="Buscar..." 
+                class="form-control"
+            />
+        </div>
+
+        <ul id="task-list" class="task-list">
+            </ul>
+        <div id="empty-state" class="empty-state" style="display: none;">
+            <p>Ainda não há tarefas nesta lista! :P</p>
         </div>
     </div>
+        </div>
 
     <script src="script.js"></script>
 </body>
